@@ -15,7 +15,7 @@ pipeline {
         stage("Create Maven Web Application Project") {
             steps {
                 dir('/root') {
-                    sh "mkdir my-webapp"
+                   
                     dir('my-webapp') {
                         sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
                     }
