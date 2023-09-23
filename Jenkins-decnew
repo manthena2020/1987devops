@@ -15,7 +15,8 @@ pipeline{
             steps{
                 sh "mvn clean package"
                 sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=myweb -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false"
-                sh "mv target/*.war target/my-app.war"
+                  sh "mvn compile"
+                sh "mv target/*.war target/myweb.war"
             }
         }
         stage("deploy-dev"){
