@@ -14,9 +14,12 @@ pipeline {
 
         stage("Create Maven Web Application Project") {
             steps {
-                  sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
-                    
-                
+                dir('/root') {
+                    sh "mkdir my-webapp"
+                    dir('my-webapp') {
+                        sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
+                    }
+                }
             }
         }
 
@@ -24,6 +27,7 @@ pipeline {
             steps {
                 dir('/root/my-webapp') {
                     sh "mvn clean package"
+                    sh "mv target/*.war target/myweb.war"
                 }
             }
         }
@@ -32,7 +36,7 @@ pipeline {
             steps {
                 sshagent(['tomcat-new']) {
                     sh """
-                        scp -o StrictHostKeyChecking=no /root/my-webapp/target/*.war root@192.168.56.112:/root/apache-tomcat-9.0.63/webapps/
+                        scp -o StrictHostKeyChecking=no /root/my-webapp/target/myweb.war root@192.168.56.112:/root/apache-tomcat-9.0.63/webapps/
                         
                         ssh root@192.168.56.112 '/root/apache-tomcat-9.0.63/bin/shutdown.sh'
                         ssh root@192.168.56.112 '/root/apache-tomcat-9.0.63/bin/startup.sh'
