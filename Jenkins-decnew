@@ -8,7 +8,7 @@ pipeline{
         stage("Git Checkout"){
             steps{
                 git branch: 'dev1', credentialsId: 'Javahome2', url: 'https://github.com/manthena2020/1987devops.git'
-                branch: dev1
+                
             }
         }
         stage("Maven Build"){
