@@ -14,11 +14,11 @@ pipeline {
 
         stage("Create Maven Web Application Project") {
             steps {
-                dir('/root') {
-                    sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
-                }
+                sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
+                 sh "mvn package"
+}
             }
-        }
+        
 
         stage("Maven Build") {
             steps {
