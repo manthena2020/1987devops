@@ -1,35 +1,45 @@
-pipeline{
+pipeline {
     agent any
-    
-    environment{
+
+    environment {
         PATH = "/usr/share/maven/bin:$PATH"
     }
-    stages{
-        stage("Git Checkout"){
-            steps{
+
+    stages {
+        stage("Git Checkout") {
+            steps {
                 git branch: 'dev1', credentialsId: 'Javahome2', url: 'https://github.com/manthena2020/1987devops.git'
-                
             }
         }
-        stage("Maven Build"){
-            steps{
-                sh "mvn clean package"
-                sh "mv target/*.war target/myweb.war"
+
+        stage("Create Maven Web Application Project") {
+            steps {
+                dir('/root') {
+                    sh """
+                        mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+                    """
+                }
             }
         }
-        stage("deploy-dev"){
-            steps{
+
+        stage("Maven Build") {
+            steps {
+                dir('/root/my-webapp') {
+                    sh "mvn clean package"
+                }
+            }
+        }
+
+        stage("Deploy to Tomcat") {
+            steps {
                 sshagent(['tomcat-new']) {
-                sh """
-                    scp -o StrictHostKeyChecking=no target/myweb.war  root@http://192.168.56.112/:/root/apache-tomcat-9.0.63/webapps/
-                    
-                    ssh root@192.168.56.112/root/apache-tomcat-9.0.63/bin/shutdown.sh
-                    
-                    ssh root@192.168.56.112/root/apache-tomcat-9.0.63/bin/startup.sh
-                
-                """
-            }
-            
+                    sh """
+                        scp -o StrictHostKeyChecking=no /root/my-webapp/target/*.war root@192.168.56.112:/root/apache-tomcat-9.0.63/webapps/
+                        
+                        ssh root@192.168.56.112 '/root/apache-tomcat-9.0.63/bin/shutdown.sh'
+                        ssh root@192.168.56.112 '/root/apache-tomcat-9.0.63/bin/startup.sh'
+                    """
+                }
             }
         }
     }
