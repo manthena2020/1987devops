@@ -15,10 +15,7 @@ pipeline {
         stage("Create Maven Web Application Project") {
             steps {
                 dir('/root') {
-                   
-                    dir('my-webapp') {
-                        sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
-                    }
+                    sh "mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-webapp -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false"
                 }
             }
         }
@@ -27,7 +24,14 @@ pipeline {
             steps {
                 dir('/root/my-webapp') {
                     sh "mvn clean package"
-                    sh "mv target/*.war target/myweb.war"
+                }
+            }
+        }
+
+        stage("Move WAR to Target") {
+            steps {
+                dir('/root/my-webapp/target') {
+                    sh "mv *.war myweb.war"
                 }
             }
         }
