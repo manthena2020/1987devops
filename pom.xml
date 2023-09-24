@@ -9,7 +9,7 @@
     <url>http://maven.apache.org</url>
 
     <build>
-        <sourceDirectory>../src/main/java</sourceDirectory>
+        <sourceDirectory>../src/main/webapp</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
