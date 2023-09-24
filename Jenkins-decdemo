@@ -1,5 +1,9 @@
 pipeline{
     agent any
+   environment {
+        PATH = "/usr/share/maven"
+    }
+
     stages{
         stage("GIT checkout"){
             steps{
