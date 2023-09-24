@@ -22,9 +22,8 @@
 		</dependency>
 
 	</dependencies>
-	  <build>
-	       <sourceDirectory>src</sourceDirectory>
-	   </build>
+	 
+	       
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>nexusRepo</id>
