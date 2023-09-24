@@ -15,7 +15,7 @@
 	<dependencies>
            <build>
 	       <sourceDirectory>src</sourceDirectory>
-		
+	   </build>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -45,5 +45,5 @@
 	    </pluginRepository>
 	</pluginRepositories>
 
-</build>	
+	
 </project>
