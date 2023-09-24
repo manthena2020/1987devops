@@ -18,6 +18,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>-3.8.1</version>
+			<url>https://repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom/</url>
 			<scope>test</scope>
 		</dependency>
 
