@@ -7,13 +7,11 @@ my pom file <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http:/
 	<version>8.2.0</version>
 	<name>Java Home myweb</name>
 	<url>http://maven.apache.org</url>
-	
 	  <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
 	<dependencies>
-
 		
 		<dependency>
 			<groupId>junit</groupId>
