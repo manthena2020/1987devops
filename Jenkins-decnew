@@ -1,6 +1,8 @@
 pipeline{
     agent any
-        environment{
+       tools {
+            jdk "jdk"
+       environment{
         PATH = " /usr/bin/mvn/bin:$PATH"
     }
     stages{
