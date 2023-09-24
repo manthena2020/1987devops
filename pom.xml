@@ -1,4 +1,4 @@
-my pom file <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>in.javahome</groupId>
@@ -7,11 +7,13 @@ my pom file <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http:/
 	<version>8.2.0</version>
 	<name>Java Home myweb</name>
 	<url>http://maven.apache.org</url>
+	
 	  <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
 	<dependencies>
+
 		
 		<dependency>
 			<groupId>junit</groupId>
@@ -41,3 +43,6 @@ my pom file <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http:/
 		<url>http://repo1.maven.org/maven2</url>
 	    </pluginRepository>
 	</pluginRepositories>
+
+	
+</project>
