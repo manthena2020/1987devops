@@ -6,8 +6,11 @@
 	<packaging>war</packaging>
 	<version>8.2.0</version>
 	<name>Java Home myweb</name>
-	<relativePath> ../Java Home myweb/pom.xml</relativePath>
 	<url>http://maven.apache.org</url>
+
+	<parent>
+<relativePath> ../Java Home myweb/pom.xml</relativePath>
+</parent>
 	
 	
 	  <properties>
