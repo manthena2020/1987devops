@@ -1,7 +1,7 @@
 package in.javahome.myweb.controller;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+import org.junit.Test;
+import org.junit.Assertions;
 
 public class CalculatorTest {
     Calculator cal = new Calculator();
