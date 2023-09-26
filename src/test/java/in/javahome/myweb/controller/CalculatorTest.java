@@ -1,7 +1,7 @@
 package in.javahome.myweb.controller;
 
 import org.junit.Test;
-import org.junit.Assertions;
+import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
     Calculator cal = new Calculator();
