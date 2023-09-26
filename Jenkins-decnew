@@ -15,6 +15,7 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
+                sh " cd /root/apache-maven-3.9.4/bin"
                 sh "mvn clean package "
                 sh "mv target/*.war target/myweb.war"
             }
