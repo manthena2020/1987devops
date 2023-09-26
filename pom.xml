@@ -39,9 +39,10 @@
   	</distributionManagement>
 	<pluginRepositories>
 	    <pluginRepository>    
-		<id>org.apache.maven.pligins</id>
-		<name>3.8.1</name>
-		<url>http://repo1.maven.org/maven2</url>
+		<id>org.apache.maven.plugins</id>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+
 	    </pluginRepository>
 	</pluginRepositories>
 		
