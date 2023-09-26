@@ -9,6 +9,11 @@
 	<url>http://maven.apache.org</url>
 
 	<parent>
+		<groupId>in.javahome</groupId>
+	<artifactId>myweb</artifactId>
+	<packaging>war</packaging>
+	<version>8.2.0</version>
+	<name>Java Home myweb</name>
 <relativePath> ../Java Home myweb/pom.xml</relativePath>
 </parent>
 	
