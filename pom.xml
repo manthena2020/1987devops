@@ -39,11 +39,9 @@
   	</distributionManagement>
 	<pluginRepositories>
 	    <pluginRepository>    
-		<id>org.apache.maven.plugins</id>
-                <name>Maven.org</name>
-                <version>3.8.1</version>
-		    <url>http://repo1.maven.org/maven3</url>
-
+		<id>maven3</id>
+		<name>Maven.org</name>
+		<url>http://repo1.maven.org/maven3</url>
 	    </pluginRepository>
 	</pluginRepositories>
 		
