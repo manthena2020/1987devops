@@ -10,12 +10,12 @@ pipeline{
         stage("Git Checkout"){
             steps{
                 git branch: 'dev1', credentialsId: 'Javahome2', url: 'https://github.com/manthena2020/1987devops.git'
-                
+                sh "cp pom.xml"
             }
         }
         stage("Maven Build"){
             steps{
-                sh "mvn clean package"
+                sh "mvn clean package -f pom.xml"
                 sh "mv target/*.war target/myweb.war"
             }
         }
