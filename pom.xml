@@ -37,6 +37,12 @@
 		    <url>http://18.183.142.110:8081/repository/sample-releases/</url>
 		</repository>
   	</distributionManagement>
-	
+	<pluginRepositories>
+	    <pluginRepository>    
+		<id>org.apache.maven.pligins</id>
+		<name>3.8.1</name>
+		<url>http://repo1.maven.org/maven2</url>
+	    </pluginRepository>
+	</pluginRepositories>
 		
 </project>
