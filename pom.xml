@@ -39,7 +39,7 @@
   	</distributionManagement>
 	<pluginRepositories>
 	    <pluginRepository>    
-		<id>maven</id>
+		<id>maven1</id>
 		<name>Maven.org</name>
 		<url>http://repo1.maven.org/maven2</url>
 	    </pluginRepository>
