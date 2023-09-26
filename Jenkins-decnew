@@ -15,7 +15,6 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
-                sh "cp target/pom.xml"
                 sh "mvn clean package -f pom.xml"
                 sh "mv target/*.war target/myweb.war"
             }
